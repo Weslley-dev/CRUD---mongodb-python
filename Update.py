@@ -1,0 +1,12 @@
+#Atualizar algum atributo de determinado produto.
+
+from mongoengine.errors import DoesNotExist
+from Principal1 import Produto
+
+try:
+    produto = Produto.objects(Nome="Arroz")
+    produto.update(Valor=6.0)
+    
+    print("Produto atualizado!")
+except DoesNotExist:
+    print("Produto não encontrado")
